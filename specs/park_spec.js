@@ -75,4 +75,13 @@ describe('Park', function() {
     assert.strictEqual(actual,3)
   });
 
+  it('should be able to get total daily visitors', function(){
+      const actual = park.dailyVisitors();
+      assert.strictEqual(actual, 140);
+    });
+
+  it('should be able to get total annual visitors', function(){
+        const actual = park.annualVisitors();
+        assert.strictEqual(actual, 51100);
+      });
 });

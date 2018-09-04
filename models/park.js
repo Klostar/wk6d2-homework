@@ -53,3 +53,18 @@ Park.prototype.removeSpecies = function (species) {
     else return dinosaurSpecies
   };
 };
+
+Park.prototype.dailyVisitors = function () {
+  let dailyVisitors = 0
+    for ( const dinosaur of this.dinosaurs){
+      dailyVisitors += dinosaur.guestsAttractedPerDay
+    }
+    return dailyVisitors
+};
+
+Park.prototype.annualVisitors = function () {
+  let dailyVisitors = this.dailyVisitors();
+  let annualVisitors = (dailyVisitors * 365 );
+  return annualVisitors;
+
+};
