@@ -68,3 +68,10 @@ Park.prototype.annualVisitors = function () {
   return annualVisitors;
 
 };
+
+Park.prototype.annualRevenue = function () {
+  let annualVisitors = this.annualVisitors();
+  let annualRevenue = (annualVisitors * this.ticketPrice)
+  return annualRevenue
+
+};
