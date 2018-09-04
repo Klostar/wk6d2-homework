@@ -23,7 +23,7 @@ describe('Park', function() {
 
   })
 
-it('should have a name', function () {
+  it('should have a name', function () {
     const actual = park.name;
     assert.strictEqual(actual,'Jurrassic');
   });
@@ -55,9 +55,10 @@ it('should have a name', function () {
   });
 
   it('should be able to find the dinosaur that attracts the most visitors',function(){
-    const actual = park.mostPopularDinosaur()
+    const actual = park.mostPopularDinosaur();
     assert.strictEqual(actual,velociraptor)
   });
+
 
   it('should be able to find all dinosaurs of a particular species', function(){
       park.addDinosaur(stegosaurus)
@@ -67,6 +68,11 @@ it('should have a name', function () {
     });
 
 
-  it('should be able to remove all dinosaurs of a particular species');
+  it('should be able to remove all dinosaurs of a particular species', function(){
+    park.dinosaurSpecies('trex', 'velociraptor', 'dipliodocus', 'other');
+    park.removeSpecies(trex);
+    const actual = park.dinosaurs.length;
+    assert.strictEqual(actual,3)
+  });
 
 });

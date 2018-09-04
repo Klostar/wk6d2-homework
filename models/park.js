@@ -23,9 +23,7 @@ Park.prototype.mostPopularDinosaur = function () {
     return obj2.guestsAttractedPerDay - obj1.guestsAttractedPerDay
 // why do you need a return here!!!
   })
-
 return this.dinosaurs[0]
-
 };
 
 Park.prototype.dinosaurSpecies = function () {
@@ -44,4 +42,14 @@ Park.prototype.dinosaurSpecies = function () {
 
   }
   return dinosaurSpecies;
+};
+
+Park.prototype.removeSpecies = function (species) {
+  let dinosaurSpecies = {'trex':1, 'velociraptor':1, 'dipliodocus':1, 'other':1};
+  for ( const dinosaur of this.dinosaurs){
+    if( dinosaur.species === species) {
+      dinosaur.removeSpecies();
+    }
+    else return dinosaurSpecies
+  };
 };
