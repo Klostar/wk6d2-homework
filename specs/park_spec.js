@@ -17,6 +17,7 @@ describe('Park', function() {
     velociraptor = new Dinosaur('velociraptor', 'omnivore', 60)
     dipliodocus = new Dinosaur('dipliodocus','herbivore',30)
     stegosaurus = new Dinosaur('stegosaurus','carnivore', 60)// only added for push method once loops bac round ignorew
+    yangchuanosaurus = new Dinosaur('yangchuanosaurus', 'omnivore',20)
     dinosaurs = [ trex, velociraptor,dipliodocus];
     park = new Park('Jurrassic', 10 , dinosaurs)
 
@@ -90,5 +91,12 @@ it('should be able to get total annual revenue', function(){
         assert.strictEqual(actual, 511000);
       });
 
+it('should be able to list all diet types', function(){
+    park.addDinosaur(stegosaurus)
+    park.addDinosaur(yangchuanosaurus)
+    const actual = park.dinosaurDiet();
+    assert.deepStrictEqual(actual, { 'carnivore': 2, 'herbivore': 1, 'omnivore': 2})
+
+  });
 
 });

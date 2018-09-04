@@ -75,3 +75,18 @@ Park.prototype.annualRevenue = function () {
   return annualRevenue
 
 };
+
+Park.prototype.dinosaurDiet = function () {
+  let dinosaurDiet = {'carnivore':0, 'herbivore':0, 'omnivore':0,};
+  for (const dinosaur of this.dinosaurs){
+    if (dinosaur.diet === 'carnivore'){
+      dinosaurDiet.carnivore +=1;
+    }
+    else if ( dinosaur.diet === 'herbivore'){
+      dinosaurDiet.herbivore +=1;
+    }
+    else dinosaurDiet.omnivore +=1;
+
+  }
+  return dinosaurDiet;
+};
