@@ -18,7 +18,7 @@ describe('Park', function() {
     dipliodocus = new Dinosaur('dipliodocus','herbivore',30)
     stegosaurus = new Dinosaur('stegosaurus','carnivore', 60)// only added for push method once loops bac round ignorew
     dinosaurs = [ trex, velociraptor,dipliodocus];
-    park = new Park('Jurrassic', 10 , dinosaurs, 40)
+    park = new Park('Jurrassic', 10 , dinosaurs)
 
 
   })

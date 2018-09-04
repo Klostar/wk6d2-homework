@@ -45,7 +45,7 @@ Park.prototype.dinosaurSpecies = function () {
 };
 
 Park.prototype.removeSpecies = function (species) {
-  let dinosaurSpecies = {'trex':1, 'velociraptor':1, 'dipliodocus':1, 'other':1};
+  let dinosaurSpecies = ('trex', 'velociraptor', 'dipliodocus', 'other')
   for ( const dinosaur of this.dinosaurs){
     if( dinosaur.species === species) {
       dinosaur.removeSpecies();
