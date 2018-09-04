@@ -9,16 +9,16 @@ describe('Park', function() {
   let trex;
   let velociraptor;
   let dipliodocus;
-  let dinosaur;
+  let dinosaurs;
 
   beforeEach(function () {
 
-    trex = new Dinosaur('t-rex','carnivore',50)
-    velociraptor = new Dinosaur('velociraptor', 'omnivore', 40)
+    trex = new Dinosaur('trex','carnivore',50)
+    velociraptor = new Dinosaur('velociraptor', 'omnivore', 60)
     dipliodocus = new Dinosaur('dipliodocus','herbivore',30)
-    stegosaurus = new Dinosaur('stegosaurus','carnivore', 60)
+    stegosaurus = new Dinosaur('stegosaurus','carnivore', 60)// only added for push method once loops bac round ignorew
     dinosaurs = [ trex, velociraptor,dipliodocus];
-    park = new Park('Jurrassic', 10 , dinosaurs)
+    park = new Park('Jurrassic', 10 , dinosaurs, 40)
 
 
   })
@@ -49,16 +49,23 @@ it('should have a name', function () {
   });
 
   it('should be able to remove a dinosaur from its collection',function(){
-    park.removeDinosaur(stegosaurus)
-    const actual = park.dinosaurs.length
+    park.removeDinosaur(stegosaurus);
+    const actual = park.dinosaurs.length;
     assert.strictEqual(actual,2)
   });
 
   it('should be able to find the dinosaur that attracts the most visitors',function(){
-    
+    const actual = park.mostPopularDinosaur()
+    assert.strictEqual(actual,velociraptor)
   });
 
-  it('should be able to find all dinosaurs of a particular species');
+  it('should be able to find all dinosaurs of a particular species', function(){
+      park.addDinosaur(stegosaurus)
+      const actual = park.dinosaurSpecies();
+      assert.deepStrictEqual(actual, { 'trex': 1, 'velociraptor': 1, 'dipliodocus': 1, 'other':1 })
+
+    });
+
 
   it('should be able to remove all dinosaurs of a particular species');
 
