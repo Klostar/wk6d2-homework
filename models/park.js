@@ -54,6 +54,25 @@ Park.prototype.removeSpecies = function (species) {
   };
 };
 
+
+//itterating through the array so could come back with unexpected results, try not to do this. push the ones you want to keep on
+//to a new array. try the below code.
+
+// ----------------class solution---------------------------
+// Park.prototype.removeBySpecies = function (species) {
+//   const newDinosaurs = [];
+//
+//   for (const dinosaur of this.dinosaurs) {
+//     if (dinosaur.species !== species) {
+//       newDinosaurs.push(dinosaur);
+//     }
+//   }
+//
+//   this.dinosaurs = newDinosaurs;
+// }
+
+
+
 Park.prototype.dailyVisitors = function () {
   let dailyVisitors = 0
     for ( const dinosaur of this.dinosaurs){
