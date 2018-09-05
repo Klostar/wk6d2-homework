@@ -109,3 +109,22 @@ Park.prototype.dinosaurDiet = function () {
   }
   return dinosaurDiet;
 };
+
+
+//-------------------class notes------------------------
+// Park.prototype.numberOfDinosaursByDiet = function () {
+//   const numberOfDinosaursByDiet = {};
+//
+//   for (const dinosaur of this.dinosaurs) {
+//     if (numberOfDinosaursByDiet[dinosaur.diet]) {
+//       numberOfDinosaursByDiet[dinosaur.diet] += 1;
+//     }
+//     else {
+//       numberOfDinosaursByDiet[dinosaur.diet] = 1;
+//     }
+//   }
+//
+//   return numberOfDinosaursByDiet;
+// }
+//
+// module.exports = Park;
